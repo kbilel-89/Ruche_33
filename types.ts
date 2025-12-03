@@ -1,3 +1,4 @@
+
 export enum UserRole {
   ABEILLE = 'Abeille Active',
   BUTINEUR = 'Butineur',
@@ -32,4 +33,27 @@ export interface Event {
   location: string;
   description: string;
   type: 'Réunion' | 'Action' | 'Formation';
+}
+
+export interface MeetingReport {
+  id: string;
+  date: string;
+  title: string;
+  participants: number;
+  tags: string[];
+  content: string; // Markdown-like content
+  notionLink?: string;
+}
+
+export type MediaType = 'Livre' | 'Vidéo' | 'Article' | 'Podcast' | 'Site Web';
+
+export interface MediaItem {
+  id: string;
+  title: string;
+  author: string;
+  type: MediaType;
+  description: string;
+  link?: string;
+  imageUrl?: string; // Optional, for covers
+  tags: string[];
 }
